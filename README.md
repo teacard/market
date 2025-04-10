@@ -66,6 +66,5 @@
 > 可在此放入專案畫面截圖  
 > 建議圖片放在 `img/` 資料夾，再用以下語法插入：
 
-```markdown
-![首頁畫面](market/images/711Icon.png)
+<img src="https://github.com/teacard/market/market/images/711Icon,png">
 ![商品頁面](img/product.png)
