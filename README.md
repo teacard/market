@@ -13,16 +13,10 @@
 
 ## 🔧 使用技術
 
-| 分類     | 技術名稱         | Icon |
-|----------|------------------|------|
-| 前端     | HTML             | 🟧 ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=fff&style=flat) |
-|          | CSS              | 🟦 ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff&style=flat) |
-|          | JavaScript       | 🟨 ![JS](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat) |
-|          | Vue              | 💚 ![Vue](https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=fff&style=flat) |
-|          | Bootstrap        | 💜 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat) |
-| 後端     | PHP              | 💠 ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=fff&style=flat) |
-| 資料庫   | MySQL            | 🐬 ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=fff&style=flat) |
-| 其他工具 | SweetAlert2      | 🍬 ![SweetAlert2](https://img.shields.io/badge/-SweetAlert2-FF6F61?logo=sweetalert2&logoColor=fff&style=flat) |
+| 前端             | 後端        | 其他工具       |
+|------------------|-------------|----------------|
+| ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=fff&style=flat) <br> ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff&style=flat) <br> ![JS](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat) <br> ![Vue](https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=fff&style=flat) <br> ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat) | ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=fff&style=flat) <br> ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=fff&style=flat) | ![SweetAlert2](https://img.shields.io/badge/-SweetAlert2-FF6F61?logo=sweetalert2&logoColor=fff&style=flat) |
+
 
 
 ---
