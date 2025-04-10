@@ -21,7 +21,6 @@
 | ![jQuery](https://img.shields.io/badge/-jQuery-0769AD?logo=jquery&logoColor=fff&style=flat) |                                            |                                          |                                                |
 | ![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?logo=bootstrap&logoColor=fff&style=flat) |                                            |                                          |                                                |
 | ![SweetAlert](https://img.shields.io/badge/-SweetAlert-FF5E5B?logo=sweetalert2&logoColor=fff&style=flat) |                                            |                                          |                                                |
-| ![ApexCharts](https://img.shields.io/badge/-ApexCharts-FF2E2E?logo=apexcharts&logoColor=fff&style=flat) |                                            |                                          |                                                |
 | ![AJAX](https://img.shields.io/badge/-AJAX-0066FF?logo=ajax&logoColor=fff&style=flat) |                                            |                                          |                                                |
 | ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff&style=flat) |                                            |                                          |                                                |
 
