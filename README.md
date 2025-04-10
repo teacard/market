@@ -67,5 +67,5 @@
 > 建議圖片放在 `img/` 資料夾，再用以下語法插入：
 
 ```markdown
-![首頁畫面](img/homepage.png)
+![首頁畫面](market/imges/711icon.png)
 ![商品頁面](img/product.png)
