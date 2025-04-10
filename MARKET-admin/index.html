@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>market-後台系統</title>
+</head>
+<!-- bootstrap -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<!-- login.css -->
+<link rel="stylesheet" href="/css/login.css">
+<!-- basic.css -->
+<link rel="stylesheet" href="/css/basic.css">
+<!-- google fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap">
+
+<body>
+    <div class="wrapper">
+        <div class="container-sm">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center fw-900">MARKET-後台系統</h3>
+                    <form action="" method="post" id="loginForm">
+                        <div class="mb-3 text-center">
+                            <label for="username" class="form-label fw-500">帳號</label>
+                            <input type="text" class="form-control" id="account" name="account">
+                        </div>
+                        <div class="mb-3 text-center">
+                            <label for="password" class="form-label fw-500">密碼</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <button type="button" class="btn btn-warning w-100" onclick="submitLogin()">登入</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- bootstrap -->
+<script src="/js/bootstrap.bundle.min.js"></script>
+<!-- jquery -->
+<script src="/js/jquery-3.7.1.min.js"></script>
+<!-- basic.js -->
+<script src="/js/basic.js"></script>
+<!-- sweetalert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function () {
+        $("#loginForm").on("keydown", function (e) {
+            if (e.key == "Enter") {
+                // 防止表單提交
+                e.preventDefault();
+                // function
+                submitLogin();
+            }
+        });
+    });
+
+    // 登入ajax處理
+    function submitLogin() {
+        
+        var data = {};
+        data['account'] = $('#account').val();
+        data['password'] = $('#password').val();
+        $.ajax({
+            type: 'POST',
+            url: apiurl+'CheckAdminUser',
+            dataType: 'json',
+            data: JSON.stringify(data),
+            success: function (data) {
+                if (data.state === true) {
+                    console.log(data);
+                    setCookie('keyA', data.data.keyA, 0.3);
+                    setCookie('keyB', data.data.keyB, 0.3);
+                    window.location.href = '/';
+                } else {
+                    console.log("API-連接失敗");
+                    swal2('登入失敗', '', 'error', '', false, () => {}, true);
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    };
+
+
+</script>
+
+</html>
