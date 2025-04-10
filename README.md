@@ -101,3 +101,6 @@
 
 <img src="https://github.com/teacard/market/blob/main/market/images/711Icon.png">
 ![商品頁面](img/product.png)
+
+## 📬 聯絡作者
+- **Email**: chap39672@gmail.com
