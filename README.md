@@ -103,5 +103,5 @@
 ![商品頁面](img/product.png)
 
 ## 📬 聯絡作者
-- **作者**：teacard
-- **Email**: chap39672@gmail.com
+- **👤作者**：teacard
+- **📧Email**: chap39672@gmail.com
