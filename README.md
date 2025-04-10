@@ -15,13 +15,13 @@
 
 | 🔧 前端                                        | 🖥️ 後端                                    | 💾 資料庫                              | 🛠️ 其他工具                                  |
 |------------------------------------------------|--------------------------------------------|----------------------------------------|----------------------------------------------|
-| ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=fff&style=flat)| ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=fff&style=flat) | ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=fff&style=flat) | ![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=fff&style=flat)                   |
+| ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=fff&style=flat)| ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=fff&style=flat) | ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=fff&style=flat) | ![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=fff&style=flat) |
 | ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat) | ![SQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=fff&style=flat) | ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=fff&style=flat) | ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=fff&style=flat)  |
-| ![Vue 3](https://img.shields.io/badge/-Vue%203-4FC08D?logo=vue.js&logoColor=fff&style=flat) |![JSON](https://img.shields.io/badge/-JSON-000000?logo=json&logoColor=fff&style=flat)|                                          | ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=fff&style=flat) |
-| ![jQuery](https://img.shields.io/badge/-jQuery-0769AD?logo=jquery&logoColor=fff&style=flat) |![RESTful API](https://img.shields.io/badge/-RESTful_API-4285F4?logo=api&logoColor=fff&style=flat)|                                          |                                                |
-| ![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?logo=bootstrap&logoColor=fff&style=flat) |![CORS](https://img.shields.io/badge/-CORS-008080?logo=shield&logoColor=fff&style=flat)|                                                |
+| ![Vue 3](https://img.shields.io/badge/-Vue%203-4FC08D?logo=vue.js&logoColor=fff&style=flat) |![JSON](https://img.shields.io/badge/-JSON-000000?logo=json&logoColor=fff&style=flat)|![Ubuntu](https://img.shields.io/badge/-Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=flat)| ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=fff&style=flat) |
+| ![jQuery](https://img.shields.io/badge/-jQuery-0769AD?logo=jquery&logoColor=fff&style=flat) |![RESTful API](https://img.shields.io/badge/-RESTful_API-4285F4?logo=api&logoColor=fff&style=flat)| ![Apache2](https://img.shields.io/badge/-Apache2-D22128?logo=apache&logoColor=fff&style=flat)|                                                |
+| ![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?logo=bootstrap&logoColor=fff&style=flat) |![CORS](https://img.shields.io/badge/-CORS-008080?logo=shield&logoColor=fff&style=flat)|![FileZilla](https://img.shields.io/badge/-FileZilla-FF6600?logo=filezilla&logoColor=fff&style=flat)|
 | ![Google Fonts](https://img.shields.io/badge/-Google_Fonts-4285F4?logo=googlefonts&logoColor=fff&style=flat) |![Exception](https://img.shields.io/badge/-Exception_Handling-FF5722?logo=bug&logoColor=fff&style=flat)|                                                |
-| ![Axios](https://img.shields.io/badge/-Axios-5A29E8?logo=axios&logoColor=fff&style=flat) |![Routing](https://img.shields.io/badge/-Dynamic_Routing-9C27B0?logo=server&logoColor=fff&style=flat)|                                          |                                                |
+| ![Axios](https://img.shields.io/badge/-Axios-5A29E8?logo=axios&logoColor=fff&style=flat) |![Routing](https://img.shields.io/badge/-Dynamic_Routing-9C27B0?logo=server&logoColor=fff&style=flat)|                                          |![Virtual Machine](https://img.shields.io/badge/-Virtual_Machine-339933?logo=vmware&logoColor=fff&style=flat)|
 | ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff&style=flat) |![Security](https://img.shields.io/badge/-Security-00C853?logo=lock&logoColor=fff&style=flat)|                                          |                                                |
 | ![Font Awesome](https://img.shields.io/badge/-Font_Awesome-2CAAE0?logo=font-awesome&logoColor=fff&style=flat) |![Prepared Statements](https://img.shields.io/badge/-Prepared_Statements-FFA500?logo=database&logoColor=fff&style=flat)|                                          |                                                |
 | ![SweetAlert2](https://img.shields.io/badge/-SweetAlert2-FF5E5B?logo=sweetalert2&logoColor=fff&style=flat) |  |  |
@@ -51,6 +51,13 @@
 - **Dynamic Routing**：根據 HTTP 請求的方法（POST/GET）與 URL 中的 `action` 參數，動態分配不同 API 功能。
 - **Security**：使用 `password_hash()` 與 `password_verify()` 加密與驗證密碼，確保使用者資料安全。
 - **Prepared Statements**：利用 mysqli 的 prepared statements 與 `bind_param()` 來防範 SQL 注入攻擊。
+
+#### 資料庫技術說明
+
+- **Ubuntu**：使用 Ubuntu 作為主系統提供穩定且安全的作業環境，適合用來架設資料庫與網頁伺服器。
+- **Apache2**：部署 Apache2 作為 Web 伺服器，用於處理 HTTP 請求與傳輸靜態/動態內容。
+- **FileZilla**：利用 FileZilla 進行檔案傳輸，使得上傳與管理伺服器上的檔案更為便捷。
+- **虛擬機 (Virtual Machine)**：將整個部署架設於虛擬機內，提升資源彈性管理以及方便日後維護和擴充。
 
 ---
 
