@@ -59,6 +59,12 @@
 - **FileZilla**：利用 FileZilla 進行檔案傳輸，使得上傳與管理伺服器上的檔案更為便捷。
 - **虛擬機 (Virtual Machine)**：將整個部署架設於虛擬機內，提升資源彈性管理以及方便日後維護和擴充。
 
+#### 其他技術說明
+
+- **figma草稿圖**：
+  - <a href="https://www.figma.com/proto/UCaRRbpUkeFQG8a5t8yI2c/%E7%B6%B2%E9%A0%81%E5%B0%88%E9%A1%8C-%E8%B2%B7%E9%BD%8A-?node-id=18-2&p=f&t=XMz6744mmhXX1cMY-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A2&show-proto-sidebar=1" target="_blank">figma草稿圖(電腦版)</a>
+  - <a href="https://www.figma.com/proto/UCaRRbpUkeFQG8a5t8yI2c/%E7%B6%B2%E9%A0%81%E5%B0%88%E9%A1%8C-%E8%B2%B7%E9%BD%8A-?node-id=182-944&p=f&t=XMz6744mmhXX1cMY-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=182%3A944&show-proto-sidebar=1" target="_blank">figma草稿圖(手機版)</a>
+
 ---
 
 ## 📷 畫面截圖
