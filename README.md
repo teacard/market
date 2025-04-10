@@ -20,12 +20,30 @@
 | ![Vue 3](https://img.shields.io/badge/-Vue%203-4FC08D?logo=vue.js&logoColor=fff&style=flat) |![JSON](https://img.shields.io/badge/-JSON-000000?logo=json&logoColor=fff&style=flat)|                                          | ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=fff&style=flat) |
 | ![jQuery](https://img.shields.io/badge/-jQuery-0769AD?logo=jquery&logoColor=fff&style=flat) |![RESTful API](https://img.shields.io/badge/-RESTful_API-4285F4?logo=api&logoColor=fff&style=flat)|                                          |                                                |
 | ![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?logo=bootstrap&logoColor=fff&style=flat) |![CORS](https://img.shields.io/badge/-CORS-008080?logo=shield&logoColor=fff&style=flat)|                                                |
-| ![SweetAlert2](https://img.shields.io/badge/-SweetAlert2-FF5E5B?logo=sweetalert2&logoColor=fff&style=flat) |![Exception](https://img.shields.io/badge/-Exception_Handling-FF5722?logo=bug&logoColor=fff&style=flat)|                                                |
-| ![AJAX](https://img.shields.io/badge/-AJAX-0066FF?logo=ajax&logoColor=fff&style=flat) |![Routing](https://img.shields.io/badge/-Dynamic_Routing-9C27B0?logo=server&logoColor=fff&style=flat)|                                          |                                                |
+| ![Google Fonts](https://img.shields.io/badge/-Google_Fonts-4285F4?logo=googlefonts&logoColor=fff&style=flat) |![Exception](https://img.shields.io/badge/-Exception_Handling-FF5722?logo=bug&logoColor=fff&style=flat)|                                                |
+| ![Axios](https://img.shields.io/badge/-Axios-5A29E8?logo=axios&logoColor=fff&style=flat) |![Routing](https://img.shields.io/badge/-Dynamic_Routing-9C27B0?logo=server&logoColor=fff&style=flat)|                                          |                                                |
 | ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff&style=flat) |![Security](https://img.shields.io/badge/-Security-00C853?logo=lock&logoColor=fff&style=flat)|                                          |                                                |
-| ![Axios](https://img.shields.io/badge/-Axios-5A29E8?logo=axios&logoColor=fff&style=flat) |![Prepared Statements](https://img.shields.io/badge/-Prepared_Statements-FFA500?logo=database&logoColor=fff&style=flat)|                                          |                                                |
+| ![Font Awesome](https://img.shields.io/badge/-Font_Awesome-2CAAE0?logo=font-awesome&logoColor=fff&style=flat) |![Prepared Statements](https://img.shields.io/badge/-Prepared_Statements-FFA500?logo=database&logoColor=fff&style=flat)|                                          |                                                |
+| ![SweetAlert2](https://img.shields.io/badge/-SweetAlert2-FF5E5B?logo=sweetalert2&logoColor=fff&style=flat) |  |  |
+| ![AJAX](https://img.shields.io/badge/-AJAX-0066FF?logo=ajax&logoColor=fff&style=flat) |  |  |
+| ![Mitt](https://img.shields.io/badge/-Mitt-FF4081?logo=&logoColor=fff&style=flat) |  |  |
+
 
 ### 其他說明
+
+#### 前端技術說明
+
+- **HTML5 & CSS3**：使用標準 HTML5 撰寫網頁結構，並利用 CSS3（包含自訂 CSS）來定義樣式與排版（例如利用 CSS Grid、媒體查詢等建立響應式介面）。
+- **Bootstrap**：載入 Bootstrap 提供的 CSS 與 JavaScript 插件，快速實作響應式的導航列、卡片、表單與其他常見 UI 元件，並與自訂樣式搭配使用。
+- **jQuery**：載入 jQuery 庫以輔助部分 DOM 操作和事件處理（例如根據側邊欄狀態調整內容區域）。
+- **Vue 3**：採用 Vue 3 建構前端應用，利用其資料綁定、指令（如 `v-for`、`v-model`）及生命週期鉤子來管理互動與表單驗證，並整合到多頁面環境中。
+- **Axios**：使用 Axios 進行 AJAX 請求，與後端 API 交換 JSON 格式資料，實現新增商品、更新資料等功能。
+- **SweetAlert2**：整合 SweetAlert2 當作彈出視窗，提供使用者友善的提示與錯誤訊息，改善操作體驗。
+- **Font Awesome**：利用 Font Awesome 的圖示，豐富頁面元件（例如選單、按鈕）的視覺呈現，使介面更直觀。
+- **Google Fonts**：載入 Google Fonts 來統一網頁字型與風格，使頁面美觀且具現代感。
+- **Mitt**：採用 Mitt 實現輕量級事件總線（Event Bus），方便 Vue 組件間的通訊與事件管理。
+
+#### 後端技術說明
 
 - **RESTful API**：根據 HTTP 請求的方法（GET、POST 等）及 URL 參數來分派不同功能，使 API 更具彈性和擴展性。
 - **CORS 處理**：透過設定 HTTP 標頭（例如 `Access-Control-Allow-Origin`、`Access-Control-Allow-Methods` 與 `Access-Control-Allow-Headers`）來允許跨域請求。
