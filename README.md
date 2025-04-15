@@ -96,52 +96,81 @@
 
 ## 📷 畫面截圖
 
-- **後台登入**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-login.jpg">
-- **後台登入失敗**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-loginfalse.jpg">
-- **後台主頁**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-home.jpg">
-- **後台新增商品系列**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-series.jpg">
-- **後台修改商品系列**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-series.jpg">
-- **後台刪除商品系列**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-del-series.jpg">
-- **後台商品**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-product.jpg">
-- **後台新增商品**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product-1.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product-2.jpg">
-- **後台修改商品**
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-1.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-2.jpg">
+## 📦 後台畫面展示
 
-- **前台帳號登入**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-login.jpg">
-- **前台註冊**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-submit.jpg">
-- **前台密碼登入**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-login-2.jpg">
-- **前台主頁**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-home.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/market-home-1.jpg">
-- **前台商品**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-product.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/market-product-1.jpg">
-- **前台購物車**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-shopcart.jpg">
-- **前台訂單**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata.jpg">
-<img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-1.jpg">
-- **前台訂單串接711商店API**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-2-711-api.jpg">
-- **前台訂單串接優惠券頁面API**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-2-discount-api.jpg">
-- **前台優惠券頁面**
-<img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg">
+### 🔐 後台登入與錯誤訊息
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-login.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-login-false.jpg" width="400">
+</p>
+
+### 🏠 後台主頁
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-home.jpg" width="600">
+
+### ➕ 後台新增商品系列
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-series.jpg" width="600">
+
+### ✏️ 後台修改商品系列
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-series.jpg" width="600">
+
+### ❌ 後台刪除商品系列
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-del-series.jpg" width="600">
+
+### 📦 後台商品管理
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-product.jpg" width="600">
+
+### ➕ 後台新增商品
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product-1.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product-2.jpg" width="400">
+</p>
+
+### ✏️ 後台修改商品
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-1.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-2.jpg" width="400">
+</p>
+
+---
+
+## 🛒 前台畫面展示
+
+### 🔐 前台登入 / 註冊
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-login.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-login-2.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-submit.jpg" width="400">
+</p>
+
+### 🏠 前台主頁
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-home.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-home-1.jpg" width="400">
+</p>
+
+### 📦 前台商品瀏覽
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-product.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-product-1.jpg" width="400">
+</p>
+
+### 🛍️ 前台購物車與訂單
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-shopcart.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-3-discount-api.jpg" width="400">
+</p>
+
+### 🔄 訂單 API 串接
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-2-711-api.jpg" width="400">
+</p>
+
+### 🎟️ 前台優惠券頁面
+<img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="600">
+
 
 
 ## 📬 聯絡作者
