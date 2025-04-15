@@ -166,6 +166,7 @@
 ### 🔄 訂單 API 串接
 <p>
   <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-2-711-api.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="400">
 </p>
 
 ### 🎟️ 前台優惠券頁面
