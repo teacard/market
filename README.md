@@ -21,7 +21,8 @@
 | ![jQuery](https://img.shields.io/badge/-jQuery-0769AD?logo=jquery&logoColor=fff&style=flat) |![RESTful API](https://img.shields.io/badge/-RESTful_API-4285F4?logo=api&logoColor=fff&style=flat)| ![Apache2](https://img.shields.io/badge/-Apache2-D22128?logo=apache&logoColor=fff&style=flat)|                                                |
 | ![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?logo=bootstrap&logoColor=fff&style=flat) |![CORS](https://img.shields.io/badge/-CORS-008080?logo=shield&logoColor=fff&style=flat)|![FileZilla](https://img.shields.io/badge/-FileZilla-FF6600?logo=filezilla&logoColor=fff&style=flat)|
 | ![Google Fonts](https://img.shields.io/badge/-Google_Fonts-4285F4?logo=googlefonts&logoColor=fff&style=flat) |![Exception](https://img.shields.io/badge/-Exception_Handling-FF5722?logo=bug&logoColor=fff&style=flat)|![Virtual Machine](https://img.shields.io/badge/-Virtual_Machine-339933?logo=vmware&logoColor=fff&style=flat)|
-| ![Axios](https://img.shields.io/badge/-Axios-5A29E8?logo=axios&logoColor=fff&style=flat) |![Routing](https://img.shields.io/badge/-Dynamic_Routing-9C27B0?logo=server&logoColor=fff&style=flat)|||
+| ![Axios](https://img.shields.io/badge/-Axios-5A29E8?logo=axios&logoColor=fff&style=flat) |![Routing](https://img.shields.io/badge/-Dynamic_Routing-9C27B0?logo=server&logoColor=fff&style=flat)|![AWS](https://img.shields.io/badge/-AWS-232F3E?logo=amazon-aws&logoColor=fff&style=flat)
+||
 | ![CSS](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=fff&style=flat) |![Security](https://img.shields.io/badge/-Security-00C853?logo=lock&logoColor=fff&style=flat)|                                          |                                                |
 | ![Font Awesome](https://img.shields.io/badge/-Font_Awesome-2CAAE0?logo=font-awesome&logoColor=fff&style=flat) |![Prepared Statements](https://img.shields.io/badge/-Prepared_Statements-FFA500?logo=database&logoColor=fff&style=flat)|                                          |                                                |
 | ![SweetAlert2](https://img.shields.io/badge/-SweetAlert2-FF5E5B?logo=sweetalert2&logoColor=fff&style=flat) |  |  |
@@ -58,6 +59,7 @@
 - **Apache2**：部署 Apache2 作為 Web 伺服器，用於處理 HTTP 請求與傳輸靜態/動態內容。
 - **FileZilla**：利用 FileZilla 進行檔案傳輸，使得上傳與管理伺服器上的檔案更為便捷。
 - **虛擬機(Virtual Machine)**：將整個部署架設於虛擬機內，提升資源彈性管理以及方便日後維護和擴充。
+- **AWS（Amazon Web Services）**：採用 AWS 提供的雲端基礎架構，透過 EC2 虛擬機搭配彈性 IP 與安全群組，實現穩定、安全且可擴展的部署環境。
 
 #### 其他技術說明
 
@@ -83,24 +85,93 @@
 - **商品評論**：用戶可對已購買商品進行評價，幫助其他用戶做出購買決策。(待更新)
 
 ### 3. 賣場系統
-- **訂單管理**：後端可查看與處理訂單，更新訂單狀態。(待更新)
+- **訂單管理**：後端可查看與處理訂單，更新訂單狀態。
 - **購物車功能**：用戶可以將商品加入購物車，並在結帳時選擇數量和規格。
-- **付款與運送方式**：支援多種付款方式與運送選項，提供用戶便捷的結帳體驗。(待更新)
-- **訂單歷史記錄**：用戶可查看歷史訂單，並追蹤物流狀態。(待更新)
+- **付款與運送方式**：支援多種付款方式與運送選項，提供用戶便捷的結帳體驗。
+- **訂單歷史記錄**：用戶可查看歷史訂單，並追蹤物流狀態。
 
 ### 4. 前端功能
 - **商品展示**：以視覺化方式展示商品，包含圖片、價格、顏色、尺寸等詳細信息。
-- **搜尋功能**：用戶可依關鍵字或分類快速搜尋商品。(待更新)
-- **商品篩選**：可根據不同屬性（如顏色、尺寸、價格範圍等）篩選商品，提升購物體驗。(待更新)
+- **搜尋功能**：用戶可依關鍵字或分類快速搜尋商品。
 - **響應式設計**：平台支持手機與桌面設備，提供最佳的瀏覽體驗。
 
-## 📷 畫面截圖
+### 📦 後台畫面展示
 
-> 可在此放入專案畫面截圖  
-> 建議圖片放在 `img/` 資料夾，再用以下語法插入：
+#### 🔐 後台登入與錯誤訊息
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-login.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-login-false.jpg" width="400">
+</p>
 
-<img src="https://github.com/teacard/market/blob/main/market/images/711Icon.png">
-![商品頁面](img/product.png)
+#### 🏠 後台主頁
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-home.jpg" width="600">
+
+#### ➕ 後台新增商品系列
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-series.jpg" width="600">
+
+#### ✏️ 後台修改商品系列
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-series.jpg" width="600">
+
+#### ❌ 後台刪除商品系列
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-del-series.jpg" width="600">
+
+#### 📦 後台商品管理
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-product.jpg" width="600">
+
+#### ➕ 後台新增商品
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product-1.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-add-product-2.jpg" width="400">
+</p>
+
+#### ✏️ 後台修改商品
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-1.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-2.jpg" width="400">
+</p>
+
+---
+
+### 🛒 前台畫面展示
+
+#### 🔐 前台登入 / 註冊
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-login.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-login-2.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-submit.jpg" width="400">
+</p>
+
+#### 🏠 前台主頁
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-home.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-home-1.jpg" width="400">
+</p>
+
+#### 📦 前台商品瀏覽
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-product.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-product-1.jpg" width="400">
+</p>
+
+#### 🛍️ 前台購物車與訂單
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-shopcart.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-3-discount-api.jpg" width="400">
+</p>
+
+#### 🔄 訂單 API 串接
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-2-711-api.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="400">
+</p>
+
+#### 🎟️ 前台優惠券頁面
+<img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="600">
+
+
 
 ## 📬 聯絡作者
 - **👤作者**：teacard
