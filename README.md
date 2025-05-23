@@ -104,19 +104,19 @@
 </p>
 
 #### 🏠 後台主頁
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-home.jpg" width="600">
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-home.jpg" width="400">
 
 #### ➕ 後台新增商品系列
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-series.jpg" width="600">
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-add-series.jpg" width="400">
 
 #### ✏️ 後台修改商品系列
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-series.jpg" width="600">
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-series.jpg" width="400">
 
 #### ❌ 後台刪除商品系列
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-del-series.jpg" width="600">
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-del-series.jpg" width="400">
 
 #### 📦 後台商品管理
-<img src="https://github.com/teacard/market/blob/main/showimages/admin-product.jpg" width="600">
+<img src="https://github.com/teacard/market/blob/main/showimages/admin-product.jpg" width="400">
 
 #### ➕ 後台新增商品
 <p>
@@ -130,6 +130,11 @@
   <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product.jpg" width="400">
   <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-1.jpg" width="400">
   <img src="https://github.com/teacard/market/blob/main/showimages/admin-edit-product-2.jpg" width="400">
+</p>
+
+#### 🛠️ 後台訂單管理
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/admin-order.jpg" width="400">
 </p>
 
 ---
@@ -170,7 +175,7 @@
 </p>
 
 #### 🎟️ 前台優惠券頁面
-<img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="600">
+<img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="400">
 
 ### 📄 訂單頁面
 <p>
