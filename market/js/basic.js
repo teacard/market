@@ -1,37 +1,9 @@
-const apiurl = 'http://122.117.32.6:81/market-api.php?action=';
-const photourl = 'http://122.117.32.6:83/';
-
-function checkLogin() {
-    var data = {};
-    data['keyA'] = getCookie('keyA');
-    data['keyB'] = getCookie('keyB');
-    $.ajax({
-        type: "POST",
-        url: apiurl + "checkKey",
-        dataType: "json",
-        data: JSON.stringify(data),
-        success: function (data) {
-            if (data.state === true) {
-                // console.log(data);
-                if (window.location.pathname.endsWith("/")) {
-                    window.location.href = '/home.php';
-                }
-            } else {
-                if (!window.location.pathname.endsWith("/")) {
-                    window.location.href = "/";
-                }
-            }
-        },
-        error: function (data) {
-            console.log(data);
-        }
-    });
-}
+const apiurl = 'http://13.112.220.63:82/market-api.php?action=';
+const photourl = 'http://13.112.220.63:83/';
 
 function logout() {
     deleteCookie("keyA");
     deleteCookie("keyB");
-    deleteCookie("id");
     window.location.href = "/";
 }
 

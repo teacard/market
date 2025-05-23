@@ -53,7 +53,7 @@
 
 <body>
     <div class="wrapper">
-        <nav id="adminnav" class="header">
+        <nav id="adminnav" class="header" style="z-index: 100;">
             <nav class="main-header navbar navbar-expand navbar-light bg-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -62,7 +62,7 @@
                         </a>
                     </li>
                     <li class="nav-item d-none d-sm-block">
-                        <a href="#" class="nav-link">前台首頁</a>
+                        <a href="http://13.112.220.63/" class="nav-link">前台首頁</a>
                     </li>
                     <li class="nav-item d-none d-sm-block">
                         <a href="/home.php" class="nav-link">後台首頁</a>
@@ -96,7 +96,7 @@
                                 <a href="/product_series_types/delete.php" class="btn btn-danger">刪除</a>
                             </li>
                             <li class="sidebar-item" v-for="(item, key) in series">
-                                <a href="javascript:;" class="item-link" :class="{ 'active' : activeClickNumber == item.Id}"
+                                <a href="javascript:;" class="item-link" :class="{ 'active' : activeClickNumber == item.Id, 'nowpage' : nowpage == item.Id}"
                                     @click="setClickNumber(item.Id)">
                                     <i class="fa-brands fa-product-hunt"></i>
                                     <p>{{ item.Name }}</p>
@@ -117,7 +117,7 @@
 
                             <li class="sidebar-list fw-600">訂單</li>
                             <li class="sidebar-item">
-                                <a href="javascript:;" class="item-link">
+                                <a href="/order.php?seriesId=-1" class="item-link" @click="setClickNumber(-1)" :class="{ active: activeClickNumber == -1, nowpage: nowpage == -1 }">
                                     <i class="fa-solid fa-clipboard-list"></i>
                                     <p>訂單詳情</p>
                                 </a>
@@ -141,7 +141,7 @@
                 </div>
             </aside>
         </aside>
-        <div class="content">
+        <div class="content" id="content" style="overflow: hidden; z-index: 1;">
             <?php echo $content ?? ''; ?>
         </div>
 

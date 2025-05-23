@@ -416,7 +416,7 @@
         margin-bottom: 0.5rem;
     }
 
-    .pc-person-ul a p{
+    .pc-person-ul a p {
         margin: 0;
     }
 </style>
@@ -667,7 +667,7 @@
             font-size: 1rem;
         }
 
-        .footer-tel .watch-us .title{
+        .footer-tel .watch-us .title {
             width: 70%;
             text-align: center;
         }
@@ -710,8 +710,8 @@
                 </a>
                 <div class="collapse navbar-collapse">
                     <form class="d-flex">
-                        <input class="form-control" type="text" placeholder="搜尋商品">
-                        <a href="/search.php">
+                        <input class="form-control" type="text" placeholder="搜尋商品編號" v-model="searchproduct">
+                        <a href="#" @click="search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
                         <button type="button" class="btn" @click="showsearch = !showsearch">
@@ -732,7 +732,7 @@
         </nav>
 
         <div id="pc-user-div" class="pc-person-ul" :class="{ show: showpersonul }">
-            <a href="/my-order.php" class="search-order">
+            <a href="/allorder.php" class="search-order">
                 <p>訂單查詢</p>
             </a>
             <a href="/my-discount.php" class="my-discount">
@@ -954,6 +954,7 @@
                 showsearch: false,
                 showperson: false,
                 login_in_out: false,
+                searchproduct: null,
             }
         },
         created() {
@@ -976,13 +977,10 @@
             axios.post(apiurl + "checkkey", {
                     keyA: getCookie('keyA'),
                     keyB: getCookie('keyB'),
-                    Id: getCookie('id'),
                 })
                 .then(response => {
                     // console.log(response.data);
                     if (response.data.state == true) {
-                        setCookie('keyA', response.data.data.keyA);
-                        setCookie('keyB', response.data.data.keyB);
                         vm.login_in_out = true;
                     } else {
                         vm.login_in_out = false;
@@ -1016,6 +1014,39 @@
             },
             vuelogout() {
                 logout();
+            },
+            search() {
+                const vm = this;
+                if (vm.searchproduct == null) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '請輸入商品編號',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                } else {
+                    axios.get(apiurl + "searchproduct", {
+                            params: {
+                                search: vm.searchproduct
+                            }
+                        })
+                        .then(response => {
+                            // console.log(response.data);
+                            if (response.data.state == true) {
+                                window.location.href = "/product.php?product=" + vm.searchproduct;
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: '查無此商品',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                }
             }
         }
     }

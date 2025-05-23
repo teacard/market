@@ -134,7 +134,23 @@
             }
         },
         created() {
-            console.log("test");
+            axios.post(apiurl + 'checkkey', {
+                    keyA: getCookie('keyA'),
+                    keyB: getCookie('keyB'),
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(response => {
+                    console.log(response);
+                    if(response.data.state == true) {
+                        window.location.href = "/home.php";
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         },
         methods: {
             checkform() {

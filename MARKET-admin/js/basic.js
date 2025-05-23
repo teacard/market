@@ -1,6 +1,6 @@
-const apiurl = 'http://122.117.32.6:81/admin-api.php?action=';
-const photourl = 'http://122.117.32.6:83/';
-window.photourl = photourl;
+const apiurl = 'http://13.112.220.63:82/admin-api.php?action=';
+const photourl = 'http://13.112.220.63:83/';
+
 $(document).ready(function () {
     checkLogin();
     var navheight = $("#adminnav .main-header").outerHeight();
@@ -22,11 +22,11 @@ $(document).ready(function () {
     const App = {
         data() {
             return {
-                title: '系列商品',
                 activeClickNumber: null,
                 activeClickNumberType: null,
                 series: [],
                 producttype: [],
+                nowpage: null,
             }
         },
         created() {
@@ -75,6 +75,7 @@ $(document).ready(function () {
 
             const urlparams = new URLSearchParams(window.location.search);
             vm.activeClickNumber = urlparams.get('seriesId') ?? null;
+            vm.nowpage = urlparams.get('seriesId') ?? null;
             vm.activeClickNumberType = urlparams.get('producttypeId') ?? null;
 
         },

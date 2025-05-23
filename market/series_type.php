@@ -67,6 +67,11 @@ ob_start();
         margin: 0;
         font-size: calc(100% + 1vw);
     }
+
+    .product .back a {
+        text-decoration: none;
+        color: var(--color333333);
+    }
 </style>
 
 <?php
@@ -75,10 +80,15 @@ ob_start();
 ?>
 
 <div class="product" id="product">
-    <div class="row">
+    <div class="back mt-3">
+        <a href="/home.php">
+            <i class="fa-solid fa-chevron-left"></i>回上頁
+        </a>
+    </div>
+    <div class="row mt-2">
         <div class="col-6 col-md-4" v-for="(pitem, pkey) in product">
             <div class="card" @click="toproduct(pitem.Id)">
-                <img :src="'http://122.117.32.6:83/' + pitem.photo[0].photoPath" alt="" class="card-img-top">
+                <img :src="pitem.photo[0].photoPath" alt="" class="card-img-top">
                 <div class="card-title">
                     <p class="text-center align-middle">{{ pitem.ProductName }}</p>
                 </div>
@@ -126,6 +136,11 @@ ob_start();
                     console.log(response);
                     if (response.data.state == true) {
                         vm.product = response.data.data;
+                        vm.product.forEach((item, key) => {
+                            item.photo.forEach((pitem, pkey) => {
+                                pitem.photoPath = photourl + pitem.photoPath;
+                            });
+                        });
                     } else {
                         console.log("搜尋失敗");
                     }
@@ -134,9 +149,9 @@ ob_start();
                     console.log(error);
                 })
         },
-        methods:{
-            toproduct(Id){
-                window.location.href="/product.php?product=" + Id;
+        methods: {
+            toproduct(Id) {
+                window.location.href = "/product.php?product=" + Id;
             }
         }
     }

@@ -5,9 +5,9 @@ include 'index.php';
 // 連線資料庫
 function create_connect()
 {
-    $conn = mysqli_connect('localhost', 'admin', '123456', 'market');
+    $conn = mysqli_connect('market.cf0mk4wcm75w.ap-northeast-1.rds.amazonaws.com', 'admin', 'Cook1122', 'market');
     if (!$conn) {
-        respond(false, "資料庫連線失敗");
+        respond(false, "資料庫連線失敗", mysqli_connect_error());
         exit();
     }
     return $conn;
@@ -446,8 +446,7 @@ function insertproduct()
                     $photo_flag = move_uploaded_file($photo['tmp_name'][$key], $upload_dir . $filename);
                     // can upload do insert into productphoto
                     if ($photo_flag) {
-                        $photopath = $upload_dir . $filename;
-                        $stmtphoto->bind_param("ss", $productId, $photopath);
+                        $stmtphoto->bind_param("ss", $productId, $filename);
                         $photo_flag = $stmtphoto->execute();
                     } else {
                         break;
@@ -822,7 +821,7 @@ function addproductphoto()
                 $photo_flag = move_uploaded_file($photo['tmp_name'][$key], $upload_dir . $filename);
                 // can upload do insert into productphoto
                 if ($photo_flag) {
-                    $photopath = $upload_dir . $filename;
+                    $photopath = $filename;
                     $stmt->bind_param("ss", $productId, $photopath);
                     $photo_flag = $stmt->execute();
                 } else {
@@ -876,6 +875,174 @@ function delproductphoto()
         }
     } else {
         respond(false, '資料不得為空');
+    }
+}
+
+// 獲取訂單
+function getorder()
+{
+    $conn = create_connect();
+    $conn->begin_transaction();
+    try {
+        $stmt = $conn->prepare("SELECT * FROM orders");
+        if ($stmt->execute()) {
+            $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            foreach ($result as $key => $data) {
+                $stmt = $conn->prepare("SELECT * FROM ordersproduct WHERE OrdersId = ?");
+                $stmt->bind_param("s", $data['Id']);
+                if ($stmt->execute()) {
+                    $result[$key]["orderproduct"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                } else {
+                    throw new Exception($stmt->error);
+                }
+                $stmt = $conn->prepare("SELECT * FROM orderstatus WHERE OrdersId = ?");
+                $stmt->bind_param("s", $data['Id']);
+                if ($stmt->execute()) {
+                    $result[$key]["orderstatus"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                } else {
+                    throw new Exception($stmt->error);
+                }
+            }
+            respond(true, "獲取成功", $result);
+        } else {
+            throw new Exception($stmt->error);
+        }
+
+        $conn->commit();
+    } catch (Exception $e) {
+        $conn->rollback();
+        respond(false, "獲取失敗", $e->getMessage());
+    } finally {
+        $conn->close();
+        $stmt->close();
+    }
+}
+
+// 訂單出貨狀態新增
+function sendorder()
+{
+    $input = get_json_input();
+    $orderId = $input['orderId'] ?? '';
+    $status = $input['status'] ?? '';
+    if ($orderId != '' && $status != '') {
+        try {
+            $conn = create_connect();
+            $stmt = $conn->prepare("INSERT INTO orderstatus (OrdersId, OrdersStatus) VALUES (?, ?)");
+            $stmt->bind_param("ss", $orderId, $status);
+            if ($stmt->execute()) {
+                respond(true, "新增成功");
+            } else {
+                throw new Exception($stmt->error);
+            }
+        } catch (Exception $e) {
+            respond(false, "新增失敗", $e->getMessage());
+        } finally {
+            $stmt->close();
+            $conn->close();
+        }
+    } else {
+        respond(false, "資料不得為空");
+    }
+}
+
+// 獲取圖表資料
+function getdata()
+{
+    $conn = create_connect();
+    $conn->begin_transaction();
+    try {
+        $stmt = $conn->prepare("SELECT SUM(Total) FROM orders");
+        if ($stmt->execute()) {
+            $result["ALl_Orders_Price"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]['SUM(Total)'];
+            $stmt = $conn->prepare("SELECT COUNT(*) FROM users");
+            if ($stmt->execute()) {
+                $result["All_Users"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]['COUNT(*)'];
+                $stmt = $conn->prepare("SELECT COUNT(*) FROM orders WHERE CreateTime >= DATE_FORMAT(CURDATE(), '%Y-%m-01') AND CreateTime < DATE_FORMAT(CURDATE() + INTERVAL 1 MONTH, '%Y-%m-01')");
+                if ($stmt->execute()) {
+                    $result["This_Month_Orders"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]['COUNT(*)'];
+                } else {
+                    throw new Exception($stmt->error);
+                }
+            } else {
+                throw new Exception($stmt->error);
+            }
+            respond(true, "獲取成功", $result);
+            $conn->commit();
+        } else {
+            throw new Exception($stmt->error);
+        }
+    } catch (Exception $e) {
+        respond(false, "獲取失敗", $e->getMessage());
+        $conn->rollback();
+    } finally {
+        $conn->close();
+        $stmt->close();
+    }
+}
+
+// 獲取月份的營業額
+function getmonthdata()
+{
+    try {
+        $conn = create_connect();
+        $Months = $_GET['Months'] ?? "";
+        $stmt = $conn->prepare("WITH RECURSIVE months (n, Months) AS (
+                                    SELECT 0, DATE_FORMAT(CURDATE(), '%Y-%m') 
+                                    UNION ALL 
+                                    SELECT n + 1, DATE_FORMAT(CURDATE() - INTERVAL (n + 1) MONTH, '%Y-%m') FROM months 
+                                    WHERE n + 1 < ?
+                                ),order_summary AS (
+                                SELECT DATE_FORMAT(CreateTime, '%Y-%m') AS Months, SUM(Total) AS TotalAmount
+                                FROM orders
+                                WHERE CreateTime >= DATE_SUB(CURDATE(), INTERVAL ? MONTH)
+                                GROUP BY DATE_FORMAT(CreateTime, '%Y-%m')
+                                )
+                                SELECT m.Months, IFNULL(os.TotalAmount, 0) AS This_Month_Price FROM months m LEFT JOIN order_summary os ON m.Months = os.Months ORDER BY m.Months");
+        $stmt->bind_param("ii", $Months, $Months);
+        if ($stmt->execute()) {
+            $result["Six_Month_Price"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            respond(true, "獲取成功", $result);
+        } else {
+            throw new Exception($stmt->error);
+        }
+    } catch (Exception $e) {
+        respond(false, "獲取失敗", $e->getMessage());
+    } finally {
+        $stmt->close();
+        $conn->close();
+    }
+}
+
+// 獲取月份的新會員數
+function getmonthdata_member()
+{
+    try {
+        $conn = create_connect();
+        $Months = $_GET['Months'] ?? "";
+        $stmt = $conn->prepare("WITH RECURSIVE months (n, Months) AS (
+                                    SELECT 0, DATE_FORMAT(CURDATE(), '%Y-%m') 
+                                    UNION ALL 
+                                    SELECT n + 1, DATE_FORMAT(CURDATE() - INTERVAL (n + 1) MONTH, '%Y-%m') FROM months 
+                                    WHERE n + 1 < ?
+                                ),member_summary AS (
+                                SELECT DATE_FORMAT(CreateTime, '%Y-%m') AS Months, COUNT(*) AS members_count
+                                FROM users
+                                WHERE CreateTime >= DATE_SUB(CURDATE(), INTERVAL ? MONTH)
+                                GROUP BY DATE_FORMAT(CreateTime, '%Y-%m')
+                                )
+                                SELECT m.Months, IFNULL(os.members_count, 0) AS This_Month_Member FROM months m LEFT JOIN member_summary os ON m.Months = os.Months ORDER BY m.Months");
+        $stmt->bind_param("ii", $Months, $Months);
+        if ($stmt->execute()) {
+            $result["N_Month_Member"] = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            respond(true, "獲取成功", $result);
+        } else {
+            throw new Exception($stmt->error);
+        }
+    } catch (Exception $e) {
+        respond(false, "獲取失敗", $e->getMessage());
+    } finally {
+        $stmt->close();
+        $conn->close();
     }
 }
 
@@ -934,7 +1101,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         case 'delproductphoto':
             delproductphoto();
             break;
-
+        // 訂單出貨狀態新增
+        case 'sendorder':
+            sendorder();
+            break;
         default:
             respond(false, "無此動作");
     }
@@ -956,6 +1126,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // 搜尋 product 的商品給 edit.php
         case 'searcheditproduct':
             searcheditproduct();
+            break;
+        // 獲取訂單
+        case 'getorder':
+            getorder();
+            break;
+        // 獲取圖表資料
+        case 'getdata':
+            getdata();
+            break;
+        // 獲取月份的營業額
+        case 'getmonthdata':
+            getmonthdata();
+            break;
+        // 獲取月份的新會員數
+        case 'getmonthdata_member':
+            getmonthdata_member();
             break;
         default:
             respond(false, "無此動作");

@@ -76,9 +76,8 @@ ob_start();
         </tr>
         <tbody id="orderlist">
             <tr class="align-middle text-center" v-for="(order, okey) in shoppingcart" :key="okey">
-                <td class="row">
-                    <div class="col-5 d-flex justify-content-center align-items-center">
-                        <img :src="'http://122.117.32.6:83/' + order.photo[0].photoPath" alt="" class="img-fluid">
+                <td class="row m-0">
+                    <div class="col-5 d-flex justify-content-center align-items-center h-100" :style="{ backgroundImage: 'url(' + order.photo[0].photoPath + ')' }" style="background-position: center center; background-size: cover; background-repeat: no-repeat;">
                     </div>
                     <div class="col-7 d-flex justify-content-start align-items-center">
                         {{ order.product.ProductName }}
@@ -109,12 +108,12 @@ ob_start();
         <div class="sendcoin mt-3" style="font-size: 1rem;">
             <div class="row" style="margin-left: 0; margin-right: 0;">
                 <div class="col-3 text-center" style="padding: 0;"></div>
-                <div class="col-9 text-center" style="padding: 0;"><span>運費金額：<span>49</span>元</span></div>
+                <div class="col-9 text-center" style="padding: 0;"><span>運費金額：<span v-if="totalprice>0">49</span><span v-if="totalprice == 0">0</span>元</span></div>
             </div>
         </div>
         <hr style="margin: 0.5rem 0; opacity: 1;">
         <div class="totalcoin text-center" style="margin-left: 0; margin-right: 0; font-size: 1rem;">
-            <span>總計：<span class="text-danger" style="font-size: 2rem;">{{ totalprice+49 }}</span>元</span>
+            <span>總計：<span class="text-danger" style="font-size: 2rem;" v-if="totalprice>0">{{ totalprice+49 }}</span><span v-if="totalprice == 0">0</span>元</span>
         </div>
         <button type="button" class="btn btn-dark w-100" @click="sendup">下一步</button>
     </div>
@@ -143,7 +142,7 @@ ob_start();
         methods: {
             getorder(gkeyA, gkeyB) {
                 const vm = this;
-                axios.get(apiurl + 'getorder', {
+                axios.get(apiurl + 'getshopcart', {
                         params: {
                             keyA: gkeyA,
                             keyB: gkeyB,
@@ -158,6 +157,9 @@ ob_start();
                             let total = 0;
                             vm.shoppingcart.forEach(function(item) {
                                 total += item.product.Price * item.count;
+                                item.photo.forEach(function(pitem) {
+                                    pitem.photoPath = photourl + pitem.photoPath;
+                                });
                             });
                             vm.totalprice = total;
                         } else {
@@ -169,7 +171,7 @@ ob_start();
                     });
             },
             delOrder(Id) {
-                axios.post(apiurl + 'delorder', {
+                axios.post(apiurl + 'delshopcart', {
                         id: Id
                     })
                     .then(response => {
@@ -231,6 +233,7 @@ ob_start();
                     count += item.count * item.product.Price;
                     cartid.push({
                         'id': item.id,
+                        'productId': item.product.Id,
                         'count': item.count,
                         'color': item.color.Id,
                         'size': item.size.Id,

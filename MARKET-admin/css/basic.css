@@ -188,7 +188,7 @@ html {
 
 .sidebar .sidebar-menu .active {
     /* set background & color & border-radius */
-    background: var(--color333333);
+    background: var(--color666666);
     color: var(--colorececec) !important;
     border-radius: 10px;
 }
@@ -326,6 +326,12 @@ html {
     padding: 0.25rem 0.5rem;
 }
 
+.nowpage{
+    /* set background & color */
+    background: var(--color000000)!important;
+    color: var(--colorececec) !important;
+    border-radius: 10px;
+}
 /* end for sidebar-list */
 
 /* end div for list */

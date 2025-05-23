@@ -243,7 +243,7 @@ ob_start();
         <div class="photo">
             <div class="bigphoto">
                 <div class="img">
-                    <img :src="'http://122.117.32.6:83/' + currentPhoto" alt="" class="">
+                    <img :src="currentPhoto" alt="" class="">
                 </div>
             </div>
 
@@ -251,7 +251,7 @@ ob_start();
                 <div class="leftbutton" @click="prevPhotos"><i class="fa-solid fa-chevron-left"></i></div>
                 <div class="allphoto">
                     <div class="photo-container" ref="photoContainer">
-                        <div v-for="(pitem, pkey) in product[0].photo" :style="{ backgroundImage: `url('http://122.117.32.6:83/${pitem.photoPath}')` }" @click="setBigPhoto(pitem.photoPath)" :class="{ selected: currentPhoto === pitem.photoPath }">
+                        <div v-for="(pitem, pkey) in product[0].photo" :style="{ backgroundImage: `url(${pitem.photoPath})` }" @click="setBigPhoto(pitem.photoPath)" :class="{ selected: currentPhoto === pitem.photoPath }">
                         </div>
                     </div>
                 </div>
@@ -321,7 +321,6 @@ ob_start();
                 photoWidth: 75, // 小圖片的寬度
                 margin: 5, // 每張小圖片的 margin
                 colorkey: 0,
-                sizekey: 0,
                 cId: '',
                 sId: '',
                 many: 1,
@@ -333,9 +332,13 @@ ob_start();
                 if (item > 99) {
                     vm.many = 99;
                 }
-                if (item < 1) {
+                if (item < 1 || vm.sId == '') {
                     vm.many = 1;
                 }
+            },
+            sId(item) {
+                const vm = this;
+                vm.many = 1;
             }
         },
         created() {
@@ -351,8 +354,13 @@ ob_start();
                     // console.log(response);
                     if (response.data.state == true) {
                         vm.product = response.data.data;
-                        vm.currentPhoto = response.data.data[0].photo[0].photoPath;
+                        vm.currentPhoto = photourl + response.data.data[0].photo[0].photoPath;
                         vm.cId = response.data.data[0].color[0].Id;
+                        vm.product.forEach((item, key) => {
+                            item.photo.forEach((pitem, pkey) => {
+                                pitem.photoPath = photourl + pitem.photoPath;
+                            });
+                        });
                     } else {
                         console.log("搜尋失敗");
                     }
@@ -427,7 +435,7 @@ ob_start();
                         })
                         .then(response => {
                             console.log(response.data);
-                            if(response.data.state == true) {
+                            if (response.data.state == true) {
                                 swal2("新增成功", "已加入購物車", "success", '', false, () => {}, true);
                             } else {
                                 swal2("新增失敗", "請重新嘗試", "error", '', false, () => {}, true);
