@@ -160,6 +160,7 @@
   <img src="https://github.com/teacard/market/blob/main/showimages/market-shopcart.jpg" width="400">
   <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata.jpg" width="400">
   <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-3-discount-api.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdata-4-success.jpg" width="400">
 </p>
 
 #### 🔄 訂單 API 串接
@@ -171,6 +172,12 @@
 #### 🎟️ 前台優惠券頁面
 <img src="https://github.com/teacard/market/blob/main/showimages/market-discount.jpg" width="600">
 
+### 📄 訂單頁面
+<p>
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-allorders-1-all.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-allorders-2-cannel.jpg" width="400">
+  <img src="https://github.com/teacard/market/blob/main/showimages/market-orderdetail.jpg" width="400">
+</p>
 
 
 ## 📬 聯絡作者
