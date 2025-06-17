@@ -13,6 +13,8 @@
 
 ## 🔧 使用技術
 
+
+
 | 🔧 前端                                        | 🖥️ 後端                                    | 💾 資料庫                              | 🛠️ 其他工具                                  |
 |------------------------------------------------|--------------------------------------------|----------------------------------------|----------------------------------------------|
 | ![HTML](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=fff&style=flat)| ![PHP](https://img.shields.io/badge/-PHP-777BB4?logo=php&logoColor=fff&style=flat) | ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=fff&style=flat) | ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=fff&style=flat) |
