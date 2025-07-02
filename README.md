@@ -9,3 +9,26 @@ mysql:5.7（官方）	資料庫
 ---
 
 ## 🚀 快速啟動（使用 Docker Compose）
+
+### 1️⃣ 執行指令啟動容器
+
+docker-compose up -d
+
+### 2️⃣ 開始使用
+
+在瀏覽器開啟：
+
+http://localhost/
+
+🐳 映像獨立使用（非 compose）
+
+# 拉取映像
+docker pull yourdockerid/market-version-1.1-web:latest
+
+# 啟動 Web 容器
+docker run -d -p 80:80 yourdockerid/market-version-1.1-web:latest
+
+👨‍💻 作者
+
+GitHub: teacard
+Docker Hub: teacard
