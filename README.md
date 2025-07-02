@@ -3,9 +3,7 @@
 
 📁 專案映像檔
 映像名稱	說明
-yourdockerid/market-version-1.1-web	PHP + Apache API
+teacard/market-version-1.1-web	PHP + Apache API
 mysql:5.7（官方）	資料庫
-
-✅ 請將 yourdockerid 改為你自己的 Docker Hub 使用者名稱
 
 🚀 快速啟動方式（使用 docker-compose）
