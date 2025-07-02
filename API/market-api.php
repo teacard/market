@@ -5,7 +5,7 @@ include 'index.php';
 // 連線資料庫
 function create_connect()
 {
-    $conn = mysqli_connect('market.cf0mk4wcm75w.ap-northeast-1.rds.amazonaws.com', 'admin', 'Cook1122', 'market');
+    $conn = mysqli_connect('localhost', 'your_user', 'your_pass', 'your_db', 3306);
     if (!$conn) {
         respond(false, "資料庫連線失敗");
         exit();
