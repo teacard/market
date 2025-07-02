@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂購完成</title>
+</head>
+<link rel="stylesheet" href="/css/basic.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    body .background {
+        width: 40%;
+        aspect-ratio: 1/1;
+        background-image: url('/images/SubmitBackground.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body .background>div{
+        color: var(--color333333);
+    }
+
+    .btn-dark{
+        background-color: transparent;
+        color: var(--color333333);
+    }
+</style>
+
+<body style="background-color: var(--colorececec);"
+    class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <div class="background">
+        <div class="d-flex flex-column align-items-center justify-content-center text-center">
+            <h1 class="">您的訂購已完成</h1>
+            <p class="lead">可至訂單詳情中查看訂單</p>
+            <a href="/home.php" class="btn btn-dark">回首頁</a>
+        </div>
+    </div>
+
+</body>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</html>

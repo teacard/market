@@ -1,0 +1,339 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap);
+
+:root {
+    --colorFFA90D: #FFA90D;
+    --colorececec: #ececec;
+    --color000000: #000000;
+    --color333333: #333333;
+    --color666666: #666666;
+    --color999999: #999999;
+}
+
+/* 適用於 Chrome、Safari、Edge 隱藏滾動條 */
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+html {
+    /* set basic font size for rem */
+    font-size: 20px;
+}
+
+/* start for navbar */
+#adminnav{
+    /* set layout */
+    width: 100vw;
+    /* height use js to give */
+}
+
+#adminnav .main-header{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 75px;
+    padding: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.bg-light{
+    background: var(--colorFFA90D)!important;
+}
+
+#adminnav .main-header .navbar-nav .nav-item{
+    font-size: 1rem;
+}
+
+#adminnav .main-header .navbar-nav .nav-item .nav-link{
+    padding: 0px !important;
+    margin: 0.5rem;
+    color: var(--color333333)!important;
+}
+
+#adminnav .main-header .navbar-nav .nav-item #logout{
+    margin: 0.5rem;
+    padding: 0.25rem;
+    border: 0px;
+    width: 3.5rem;
+    height: 1.75rem;
+    font-size: 1rem;
+}
+/* end for navbars */
+
+/* start  for sidebar */
+#sidebar {
+    /* set display & layout */
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    left: -300px;
+    top: auto;
+    z-index: 1000;
+    /* set animation */
+    transition: left 0.25s linear;
+}
+
+#sidebar .main-sidebar {
+    /* set W & H */
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.active {
+    /* set layout */
+    left: 0 !important;
+}
+
+.sidebar-light {
+    /* set background */
+    background: var(--colorececec);
+}
+
+/* start div for img & span */
+.logo-container {
+    /* set display & layout */
+    display: grid;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+}
+
+.logo-container .brand-link {
+    /* set display & layout */
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    justify-content: left;
+    align-items: center;
+
+    /* close <a> type & set color & backgound & border */
+    text-decoration: none;
+    background: none;
+    color: var(--color333333);
+    border-bottom: 1px solid var(--color000000);
+}
+
+.logo-container .brand-link span {
+    /* font size */
+    font-size: 1.5rem;
+    /* set display & layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 自動填充剩餘的寬度 */
+    flex-grow: 1;
+}
+
+/* end <div> for img & span */
+
+/* start <div> for list */
+.sidebar nav {
+    margin-bottom: 4rem;
+    height: auto;
+}
+
+.sidebar .sidebar-menu {
+    /* set <ul> type */
+    list-style-type: none;
+    /* set <ul> layout */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar .sidebar-menu .active {
+    /* set background & color & border-radius */
+    background: var(--color666666);
+    color: var(--colorececec) !important;
+    border-radius: 10px;
+}
+
+.sidebar .sidebar-menu .sidebar-item {
+    height: auto;
+}
+
+.sidebar .sidebar-menu .sidebar-item .item-link {
+    /* set <a> type */
+    text-decoration: none;
+    /* set <a> layout */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0.25rem;
+    /* set <a> color */
+    color: var(--color333333);
+}
+
+.sidebar .sidebar-menu .sidebar-item .item-link i {
+    /* set <i> size */
+    font-size: 1rem;
+}
+
+.fa-angle-right {
+    transition: transform 0.25s linear;
+    rotate: none;
+}
+
+
+.sidebar .sidebar-menu .sidebar-item .item-link p {
+    /* set <p> size*/
+    font-size: 1rem;
+    /* set <p> layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* 自動填充剩餘的寬度 */
+    flex-grow: 1;
+}
+
+/* start for treeview */
+.sidebar .sidebar-menu .sidebar-item .side-treeview {
+    /* set <li> type */
+    list-style-type: none;
+    /* set <li> layout */
+    max-height: 0px;
+    overflow: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    display: block;
+    /* set <li> animation */
+    transition: max-height 0.25s linear;
+}
+
+.sidebar .sidebar-menu .sidebar-item .side-treeview .sidebar-item-treeview {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar .sidebar-menu .sidebar-item .side-treeview .sidebar-item-treeview .item-link-treeview {
+    /* set <li> layout */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.side-treeview .active {
+    background: var(--color999999) !important;
+    color: var(--color333333) !important;
+}
+
+.menu-open {
+    overflow: hidden;
+    transition: max-height 0.25s linear;
+    /* vue set menu-open max-height */
+}
+
+.sidebar .sidebar-menu .sidebar-item .side-treeview .sidebar-item-treeview {
+    /* set <li> type */
+    list-style-type: none;
+    /* set <li> layout */
+    height: 2rem;
+}
+
+.sidebar .sidebar-menu .sidebar-item .side-treeview .sidebar-item-treeview .item-link-treeview {
+    /* set <a> type */
+    text-decoration: none;
+    /* set <a> layout */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* set <a> color */
+    color: var(--color333333);
+}
+
+.sidebar .sidebar-menu .sidebar-item .side-treeview .sidebar-item-treeview .item-link-treeview i {
+    /* set <i> size */
+    font-size: 1rem;
+}
+
+.sidebar .sidebar-menu .sidebar-item .side-treeview .sidebar-item-treeview .item-link-treeview p {
+    /* set <p> size */
+    font-size: 1rem;
+    /* set <p> layout*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    flex-grow: 1;
+}
+
+/* end for treeview */
+
+/* start for sidebar-list */
+.sidebar .sidebar-menu .sidebar-list {
+    /* set font size */
+    font-size: 1.25rem;
+    /* set layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.main-sidebar .sidebar .sidebar-menu .sidebar-list .btn{
+    padding: 0.25rem 0.5rem;
+}
+
+.nowpage{
+    /* set background & color */
+    background: var(--color000000)!important;
+    color: var(--colorececec) !important;
+    border-radius: 10px;
+}
+/* end for sidebar-list */
+
+/* end div for list */
+
+/* end for sidebar */
