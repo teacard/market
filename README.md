@@ -6,4 +6,6 @@
 teacard/market-version-1.1-web	PHP + Apache API
 mysql:5.7（官方）	資料庫
 
-🚀 快速啟動方式（使用 docker-compose）
+---
+
+## 🚀 快速啟動（使用 Docker Compose）
