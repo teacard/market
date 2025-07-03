@@ -10,6 +10,10 @@ mysql:5.7（官方）	資料庫
 
 ## 🚀 快速啟動（使用 Docker Compose）
 
+### 1️⃣ 使用 git clone 下載
+
+git clone --branch version-1.1 https://github.com/teacard/market.git
+
 ### 1️⃣ 執行指令啟動容器
 
 docker-compose up -d
