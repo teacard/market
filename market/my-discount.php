@@ -109,7 +109,7 @@ ob_start();
                                         const data = response.data.data;
                                         if (window.opener) {
                                             console.log(data);
-                                            window.opener.postMessage(data, "http://13.112.220.63/orderdata.php");
+                                            window.opener.postMessage(data, "http://localhost/orderdata.php");
                                             window.close();
                                         } else {
                                             document.body.innerText = "找不到主視窗";

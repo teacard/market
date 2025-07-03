@@ -17,6 +17,6 @@ $request_url = $_SERVER['REQUEST_URI'];
 
 // 如果是根目錄，則導向登入頁面
 if ($request_url === '/') {
-    header("Location: http://13.112.220.63/");
+    header("Location: http://localhost/");
     exit();
 }

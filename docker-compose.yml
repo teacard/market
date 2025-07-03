@@ -4,9 +4,14 @@ services:
   web:
     #從當前目錄的 Dockerfile 來建構映像檔。
     build: .
-    #主機的 80 port 對應到容器內的 80 port
+    #自訂名稱
+    image: teacard/market:v1.1
+    #主機的 80 對 容器的 80 port
     ports:
       - "80:80"
+      - "81:81"
+      - "82:82"
+      - "83:83"
     #把主機當前目錄的所有程式碼掛到容器的 /var/www/html
     volumes:
       - .:/var/www/html
@@ -26,9 +31,12 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: market
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+      - ./my.conf:/etc/mysql/conf.d/my.cnf
 
 volumes:
   db_data:
+  

@@ -545,7 +545,7 @@ ob_start();
                 // 等待 callback.php 回傳訊息
                 window.addEventListener("message", (event) => {
                     // 安全性檢查來源（視你的 domain 調整）
-                    if (event.origin !== "http://13.112.220.63:82") return;
+                    if (event.origin !== "http://localhost:83") return;
 
                     const data = event.data;
                     // console.log("收到門市資料：", data);
@@ -564,7 +564,7 @@ ob_start();
                 window.open(url, "_blank");
                 window.addEventListener("message", (event) => {
                     // 檢查來源
-                    if (event.origin !== "http://13.112.220.63") return;
+                    if (event.origin !== "http://localhost") return;
 
                     // 檢查資料是否為有效的優惠券資料
                     if (event.data && event.data.DiscountValue) {

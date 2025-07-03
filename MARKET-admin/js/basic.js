@@ -1,5 +1,5 @@
-const apiurl = 'http://13.112.220.63:82/admin-api.php?action=';
-const photourl = 'http://13.112.220.63:83/';
+const apiurl = 'http://localhost:83/admin-api.php?action=';
+const photourl = 'http://localhost:82/';
 
 $(document).ready(function () {
     checkLogin();

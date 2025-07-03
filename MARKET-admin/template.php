@@ -62,7 +62,7 @@
                         </a>
                     </li>
                     <li class="nav-item d-none d-sm-block">
-                        <a href="http://13.112.220.63/" class="nav-link">前台首頁</a>
+                        <a href="http://localhost/" class="nav-link">前台首頁</a>
                     </li>
                     <li class="nav-item d-none d-sm-block">
                         <a href="/home.php" class="nav-link">後台首頁</a>

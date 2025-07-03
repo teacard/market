@@ -10,6 +10,8 @@ function create_connect()
         respond(false, "資料庫連線失敗", mysqli_connect_error());
         exit();
     }
+    // 設定連線字元編碼
+    mysqli_set_charset($conn, 'utf8mb4');
     return $conn;
 }
 
@@ -1046,6 +1048,23 @@ function getmonthdata_member()
     }
 }
 
+// 添加後臺使用者 for testing use
+function addAdminUser()
+{
+    $acct = $_GET['acct'] ?? "";
+    $pwd = $_GET['pwd'] ?? "";
+    $hashpwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+    $conn = create_connect();
+    $stmt = $conn->prepare("INSERT INTO adminusers (Account, Password) VALUES(?, ?)");
+    $stmt->bind_param("ss", $acct, $hashpwd);
+    if ($stmt->execute()) {
+        respond(true, "Add Success", $acct . " " . $hashpwd);
+    } else {
+        respond(false, "Add false");
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_GET['action'] ?? '';
     switch ($action) {
@@ -1142,6 +1161,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // 獲取月份的新會員數
         case 'getmonthdata_member':
             getmonthdata_member();
+            break;
+        case 'addAdminUser':
+            addAdminUser();
             break;
         default:
             respond(false, "無此動作");

@@ -10,6 +10,8 @@ function create_connect()
         respond(false, "資料庫連線失敗");
         exit();
     }
+    // 設定連線字元編碼
+    mysqli_set_charset($conn, 'utf8mb4');
     return $conn;
 }
 
@@ -494,7 +496,8 @@ function cannelorder()
 
 /* get */
 // 搜尋商品
-function searchproduct(){
+function searchproduct()
+{
     $search = $_GET['search'] ?? '';
     if ($search != '') {
         try {
@@ -503,9 +506,9 @@ function searchproduct(){
             $stmt->bind_param("s", $search);
             if ($stmt->execute()) {
                 $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                if(count($result) > 0){
+                if (count($result) > 0) {
                     respond(true, "搜尋成功", $result);
-                }else{
+                } else {
                     respond(false, "沒有資料");
                 }
             } else {
@@ -749,7 +752,7 @@ function get711store()
 
             // 將資料傳回開啟地圖的原視窗
             if (window.opener) {
-                window.opener.postMessage(data, "http://13.112.220.63/orderdata.php"); // 可以加上你自己的 origin
+                window.opener.postMessage(data, "http://localhost/orderdata.php"); // 可以加上你自己的 origin
                 window.close(); // 傳完關掉自己
             } else {
                 document.body.innerText = "找不到主視窗";
