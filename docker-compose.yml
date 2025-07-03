@@ -2,7 +2,7 @@ version: '3.8'
 
 services: 
   web:
-    #自訂名稱
+    #從 docker hub 獲取我的 image
     image: teacard/market:v1.1
     #主機的 80 對 容器的 80 port
     ports:
