@@ -2,8 +2,6 @@ version: '3.8'
 
 services: 
   web:
-    #從當前目錄的 Dockerfile 來建構映像檔。
-    build: .
     #自訂名稱
     image: teacard/market:v1.1
     #主機的 80 對 容器的 80 port
